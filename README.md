@@ -88,4 +88,4 @@ The service sends the message with a concise classification instruction to Gemin
 
 ## GitHub
 
-This folder is ready to initialize as a Git repository and push to a GitHub repository. No repository URL was supplied, so it has not been published.
+Source code: https://github.com/soumo210340/ai-text-classification-api
