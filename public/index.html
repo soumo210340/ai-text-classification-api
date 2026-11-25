@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f6fb">
+  <title>Signal | Text Classifier</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Signal home"><span class="brand-mark">S</span><span>signal<span class="brand-dot">.</span></span></a>
+    <div class="service-status"><span class="status-dot"></span><span>Classifier API</span><span class="status-label">LOCAL</span></div>
+  </header>
+
+  <main class="shell">
+    <section class="intro">
+      <div class="eyebrow"><span class="sparkle">✦</span> AI TEXT CLASSIFICATION</div>
+      <h1>Make every message<br><span>easier to understand.</span></h1>
+      <p class="lede">Paste a message and let AI sort it into a clear, useful category.</p>
+    </section>
+
+    <section class="workspace" aria-label="Text classifier">
+      <form id="classify-form" class="panel input-panel">
+        <div class="panel-heading">
+          <div><span class="step">01</span><h2>Your message</h2></div>
+          <span class="limit">UP TO 10,000 CHARACTERS</span>
+        </div>
+        <label class="sr-only" for="message">Text to classify</label>
+        <textarea id="message" name="text" maxlength="10000" placeholder="For example: I was charged twice for my order and need help getting one charge refunded." required></textarea>
+        <div class="input-meta"><span id="char-count">0 / 10,000</span><span>Keep personal details out of examples</span></div>
+        <div class="examples"><span class="examples-label">TRY</span><button type="button" class="example" data-example="I have been charged twice for my order and need a refund.">Billing issue</button><button type="button" class="example" data-example="Could you tell me when my package is expected to arrive?">Delivery question</button></div>
+        <button id="submit-button" class="submit-button" type="submit"><span class="button-copy">Classify message</span><span class="button-icon" aria-hidden="true">↗</span></button>
+        <p id="error-message" class="error-message" role="alert" hidden></p>
+      </form>
+
+      <section class="panel result-panel" aria-live="polite" aria-label="Classification result">
+        <div class="panel-heading result-heading">
+          <div><span class="step">02</span><h2>Classification</h2></div>
+          <span class="result-spark" aria-hidden="true">✳</span>
+        </div>
+        <div id="empty-state" class="empty-state"><div class="empty-icon" aria-hidden="true">✳</div><h3>Your result will appear here</h3><p>Submit a message to see its category and confidence score.</p><div class="category-chips"><span>Complaint</span><span>Query</span><span>Feedback</span><span>Other</span></div></div>
+        <div id="result-state" class="result-state" hidden>
+          <span class="result-label">CATEGORY</span>
+          <div id="category-badge" class="category-badge">Other</div>
+          <div class="confidence-block"><div class="confidence-head"><span>Confidence</span><strong id="confidence-value">0%</strong></div><div class="confidence-track"><div id="confidence-fill" class="confidence-fill"></div></div><p id="confidence-note" class="confidence-note"></p></div>
+          <div class="result-footer"><span>AI response time</span><strong id="response-time">—</strong></div>
+        </div>
+        <div class="privacy-note"><span aria-hidden="true">◈</span> Local mode: your message stays on this computer. No paid AI API is called.</div>
+      </section>
+    </section>
+
+    <footer><span>Four categories. One clearer inbox.</span><span>Signal <span class="footer-separator">·</span> Local demo</span></footer>
+  </main>
+</body>
+</html>
