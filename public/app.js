@@ -56,10 +56,8 @@ function showResult(result) {
   badge.className = `category-badge ${category.toLowerCase()}`;
   document.querySelector('#confidence-value').textContent = `${Math.round(confidence * 100)}%`;
   document.querySelector('#confidence-fill').style.width = `${confidence * 100}%`;
-  document.querySelector('#confidence-note').textContent = result.classificationMode === 'local-rules'
-    ? 'Estimated from local keyword rules; this is not an AI model score.'
-    : result.confidenceEstimated
-      ? 'Estimated because the model did not provide a confidence score.'
-      : 'Model-reported confidence';
+  document.querySelector('#confidence-note').textContent = result.confidenceEstimated
+    ? 'Estimated because the model did not provide a confidence score.'
+    : 'Model-reported confidence';
   document.querySelector('#response-time').textContent = `${Number(result.responseTimeMs) || 0} ms`;
 }
