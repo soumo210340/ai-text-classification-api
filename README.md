@@ -21,6 +21,18 @@ Open `http://localhost:3000` for the browser interface. Enter a message or choos
 
 The API uses the Gemini `generateContent` endpoint and sends the key in the `X-Goog-Api-Key` header. Free-tier availability and quotas depend on Google AI Studio and the selected model. This app does not change billing settings, but requests may be billed if billing is enabled for the Google project. Keep the project on a free tier with no billing attached to avoid charges; when free quota is unavailable or exhausted, classification returns an error. Check Google's [Gemini API pricing and free-tier details](https://ai.google.dev/gemini-api/docs/pricing).
 
+## Application Screenshots
+
+### Empty state
+
+![Signal text classification interface](screenshots/signal-home.png)
+
+### Message entered
+
+![Signal interface with a sample message](screenshots/signal-message-entered.png)
+
+> Screenshots are stored in the `screenshots/` directory.
+
 ## API
 
 ### `POST /api/classify`
